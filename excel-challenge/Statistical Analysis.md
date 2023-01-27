@@ -8,13 +8,13 @@ Created 1/22/2023
 
 ### Three (3) Take Aways from the Data 
 
-    1. The most popular type of fundraiser are for 'Theater' productions accounting for 34.4% of the data sample. 'Theater' Productions also had one of the top 3 percentage of success per category at 54.4%, which was not too far behind 'Film & Video' (57.3% Qualitiatively) and 'Music' (56.6% Qualitatively). While the quality of success per its individual category was marginally lower than 'Film & Video' and 'Music', 'Theater' campaigns account for nearly a third (33.1%) of the overall successfull campaigns within the dataset.  
+1. The most popular type of fundraiser are for 'Theater' productions accounting for 34.4% of the data sample. 'Theater' Productions also had one of the top 3 percentage of success per category at 54.4%, which was not too far behind 'Film & Video' (57.3% Qualitiatively) and 'Music' (56.6% Qualitatively). While the quality of success per its individual category was marginally lower than 'Film & Video' and 'Music', 'Theater' campaigns account for nearly a third (33.1%) of the overall successfull campaigns within the dataset.  
 
-    2. Diving a little deeper into the data subcategories, it appears that the sub-category Plays is the only category within the 'Theater' Parent Category. Whereas, the other top categories above have six (6) sub-categories. I believe this could possibly skew the data for 'Theater' within the set.
+2. Diving a little deeper into the data subcategories, it appears that the sub-category Plays is the only category within the 'Theater' Parent Category. Whereas, the other top categories above have six (6) sub-categories. I believe this could possibly skew the data for 'Theater' within the set.
 
-    3. The majority of the successful campaigns had goals between '1000 to 4999' (19.4%) and the least failed (3.9%) or canceled (0.2%) campaigns overall. This goal was closely followed by '5000 to 9999' (16.6%, 12.8%, and 2.5% respectively) and 'Greater than or equal to 50000' (11.6%, 16.5%, 2.8% respectively). This is interesting because of the lower goal value may become more successful because it is likely the smaller goal is completed faster than a larger or even lofty fundraising goal. 
-    
-    4. We see that the summer months (especially July) tend to be the more popular times to run a campaign, and are more likely to be successful. More research would need to be conducted on this to find out why.
+3. The majority of the successful campaigns had goals between '1000 to 4999' (19.4%) and the least failed (3.9%) or canceled (0.2%) campaigns overall. This goal was closely followed by '5000 to 9999' (16.6%, 12.8%, and 2.5% respectively) and 'Greater than or equal to 50000' (11.6%, 16.5%, 2.8% respectively). This is interesting because of the lower goal value may become more successful because it is likely the smaller goal is completed faster than a larger or even lofty fundraising goal. 
+
+4. We see that the summer months (especially July) tend to be the more popular times to run a campaign, and are more likely to be successful. More research would need to be conducted on this to find out why.
 
 ### Limitations of the Data
 \
