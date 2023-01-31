@@ -103,6 +103,7 @@ a.ScreenUpdating = False
             .Range("P4").Value = a.WorksheetFunction.XLookup(.Range("Q4").Value, volume_rng, tick_rng, "Error", 0, 1)
                             
             .Columns.AutoFit
+            ticker_dict.RemoveAll
         End With
     Next i
     a.ScreenUpdating = True
