@@ -73,10 +73,20 @@ a.ScreenUpdating = False
             'Find Values
             row_last = .Range("K:K").SpecialCells(xlCellTypeLastCell).Row
             
+            Set rng = .Range("J2:J" & row_last)
             Set pct_rng = .Range("K2:K" & row_last)
             Set tick_rng = .Range("I2:I" & row_last)
             Set volume_rng = .Range("L2:L" & row_last)
-                            
+
+            'add "conditional" formatting
+            for each rng_cell in rng
+                if rng_cell.value >= 0 Then
+                    rng_cell.Interior.Color = vbGreen
+                Else
+                    rng_cell.Interior.Color = vbRed
+                End If
+            next rng_cell
+
             'find greatest increase
             .Range("Q2").Value = a.WorksheetFunction.Max(pct_rng)
             .Range("Q2").NumberFormat = "0.00%"
