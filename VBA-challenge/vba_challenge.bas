@@ -78,7 +78,7 @@ a.ScreenUpdating = False
             Set tick_rng = .Range("I2:I" & row_last)
             Set volume_rng = .Range("L2:L" & row_last)
 
-            'add "conditional" formatting
+            'add "conditional" formatting to yearly change col
             for each rng_cell in rng
                 if rng_cell.value >= 0 Then
                     rng_cell.Interior.Color = vbGreen
@@ -87,6 +87,7 @@ a.ScreenUpdating = False
                 End If
             next rng_cell
 
+            'add "conditional" formatting to percent change col
             for each rng_cell in pct_rng
                 if rng_cell.value >= 0 Then
                     rng_cell.Interior.Color = vbGreen
@@ -110,12 +111,15 @@ a.ScreenUpdating = False
             .Range("Q4").Value = a.WorksheetFunction.Max(volume_rng)
             .Range("Q4").NumberFormat = "#,##0"
             .Range("P4").Value = a.WorksheetFunction.XLookup(.Range("Q4").Value, volume_rng, tick_rng, "Error", 0, 1)
-                            
+
+            'fix visual appearance of data                
             .Columns.AutoFit
+            'clear ticker memory for next worksheet
             ticker_dict.RemoveAll
         End With
     Next i
     a.ScreenUpdating = True
+    'communicate with user
     MsgBox ("SUCCESS")
 End Sub
 
