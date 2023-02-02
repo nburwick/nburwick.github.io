@@ -87,6 +87,15 @@ a.ScreenUpdating = False
                 End If
             next rng_cell
 
+            for each rng_cell in pct_rng
+                if rng_cell.value >= 0 Then
+                    rng_cell.Interior.Color = vbGreen
+                Else
+                    rng_cell.Interior.Color = vbRed
+                End If
+            next rng_cell
+            
+
             'find greatest increase
             .Range("Q2").Value = a.WorksheetFunction.Max(pct_rng)
             .Range("Q2").NumberFormat = "0.00%"
