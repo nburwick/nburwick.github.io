@@ -18,7 +18,7 @@ def results_console(output_file):
 def pybank(file_in, file_out):
 
     #create reader
-    with open(file_in,'r') as pybank:
+    with open(file_in) as pybank:
         pybank_csv_reader = csv.reader(pybank,delimiter=',')
         
          #store header for finding index of column headers since we know them
@@ -77,7 +77,7 @@ def pybank(file_in, file_out):
 def pypoll(file_in, file_out):
 
     #create reader
-    with open(file_in,'r') as pypoll:
+    with open(file_in) as pypoll:
         pypoll_csv_reader = csv.reader(pypoll, delimiter=",")
         
         #store header for finding index of column headers since we know them
