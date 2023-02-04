@@ -1,6 +1,8 @@
 #this python script will process both the PyBank and PyPoll Projects and their accompaning csv files
 # import packages
-import os, csv, threading
+import os, csv, threading, time
+
+start = time.time()
 
 #store file paths for script arguments to thread (run concurrently)
 py_bank_csv = os.path.join('PyBank','Resources','budget_data.csv')
@@ -135,3 +137,4 @@ t2.join()
 results_console(py_bank_txt)
 results_console(py_poll_txt)
 
+print(f"\nScript Completed in approx: {round((time.time() - start),ndigits=4)} seconds.\n")
