@@ -6,9 +6,9 @@ start = time.time()
 
 #store file paths for script arguments to thread (run concurrently)
 py_bank_csv = os.path.join('PyBank','Resources','budget_data.csv')
-py_bank_txt = os.path.join('outputs','PyBank_Results.txt')
+py_bank_txt = os.path.join('analysis','PyBank_Results.txt')
 py_poll_csv = os.path.join('PyPoll','Resources','election_data.csv')
-py_poll_txt = os.path.join('outputs', 'PyPoll_Results.txt')
+py_poll_txt = os.path.join('analysis', 'PyPoll_Results.txt')
 
 #define a reader that displays results of each analysis into the console
 def results_console(output_file):
@@ -40,6 +40,7 @@ def pybank(file_in, file_out):
     #instanciate empty lists for moving average
     month_list, p_and_l = map(list, zip(*lines))
     change_list = []
+    
     #convert p_and_l to floats
     p_and_l = list(map(float,p_and_l))
     
@@ -132,10 +133,13 @@ def pypoll(file_in, file_out):
 # t1.join()
 # t2.join()
 
+#run analyses
 pybank(file_in=py_bank_csv,file_out=py_bank_txt)
 pypoll(file_in=py_poll_csv,file_out=py_poll_txt)
 
+#print results into console from txt files
 results_console(py_bank_txt)
 results_console(py_poll_txt)
 
+#print processing time
 print(f"\nScript Completed in approx: {round((time.time() - start),ndigits=4)} seconds.\n")
