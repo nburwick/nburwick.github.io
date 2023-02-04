@@ -67,10 +67,10 @@ def pybank(file_in, file_out):
         writer.write("Financial Analysis\n")
         writer.write("-----------------------------------\n")
         writer.write(f"Total Months: {total_months}\n")
-        writer.write(f"Total: ${"{:,.2f}".format(total_net)}\n")
-        writer.write(f"Average Change: ${"{:,.2f}".format(avg_change)}\n")
-        writer.write(f"Greatest Increase in Profits: {increase_month} (${"{:,.2f}".format(increase_value)})\n")
-        writer.write(f"Greatest Decrease in Profits: {decrease_month} (${"{:,.2f}".format(decrease_value)})\n")
+        writer.write(f"Total: ${'{:,.2f}'.format(total_net)}\n")
+        writer.write(f"Average Change: ${'{:,.2f}'.format(avg_change)}\n")
+        writer.write(f"Greatest Increase in Profits: {increase_month} (${'{:,.2f}'.format(increase_value)})\n")
+        writer.write(f"Greatest Decrease in Profits: {decrease_month} (${'{:,.2f}'.format(decrease_value)})\n")
         writer.write("-----------------------------------\n")
 
 #define a function for threading PyPoll
