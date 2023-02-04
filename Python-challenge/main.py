@@ -3,9 +3,9 @@
 import os, csv, threading
 
 #store file paths for script arguments to thread (run concurrently)
-py_bank_csv = os.path.join('PyBank','budget_data.csv')
+py_bank_csv = os.path.join('PyBank','Resources','budget_data.csv')
 py_bank_txt = os.path.join('outputs','PyBank_Results.txt')
-py_poll_csv = os.path.join('PyPoll','election_data.csv')
+py_poll_csv = os.path.join('PyPoll','Resources','election_data.csv')
 py_poll_txt = os.path.join('outputs', 'PyPoll_Results.txt')
 
 #define a reader that displays results of each analysis into the console
