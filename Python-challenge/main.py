@@ -23,7 +23,7 @@ def pybank(file_in, file_out):
         
          #store header for finding index of column headers since we know them
         header = next(pybank_csv_reader)
-        
+        print(header)
          #read and store rows into memory
         lines = []
         for row in pybank_csv_reader:
@@ -32,7 +32,7 @@ def pybank(file_in, file_out):
     #header row is Date, Profit/Loss
 
     #get pybank statistics from line memory
-    dollar_index = header.index('Profit/Loss')
+    dollar_index = header.index('Profit/Losses')
     date_index = header.index('Date')        
 
     #instanciate empty lists for moving average
@@ -83,7 +83,7 @@ def pypoll(file_in, file_out):
         
         #store header for finding index of column headers since we know them
         header = next(pypoll_csv_reader)
-        
+        print(header)
         #Read and store rows into memory
         lines = []
         for row in pypoll_csv_reader:
@@ -93,19 +93,19 @@ def pypoll(file_in, file_out):
     
     #get pypoll statistics from line memory:
     votes_cast_total = len(lines)
-    canidate_dict = {}
-    canidate_index = header.index('Canidate')
+    candidate_dict = {}
+    candidate_index = header.index('Candidate')
     
-    #count canidate votes with loop:
+    #count candidate votes with loop:
     for line in lines:
-        canidate = line[canidate_index]
-        if canidate not in canidate_dict.keys():
-            canidate_dict[canidate] = 1
+        candidate = line[candidate_index]
+        if candidate not in candidate_dict.keys():
+            candidate_dict[candidate] = 1
         else:
-            canidate_dict[canidate] +=1
+            candidate_dict[candidate] +=1
         
-    #get winner from the maximum value of vote counts per canidate in the dictionary
-    winner = max(canidate_dict, key=canidate_dict.get)
+    #get winner from the maximum value of vote counts per candidate in the dictionary
+    winner = max(candidate_dict, key=candidate_dict.get)
     
     #define writer to write analysis results from pypoll    
     with open(file_out,'w') as writer:
@@ -113,8 +113,8 @@ def pypoll(file_in, file_out):
         writer.write("-----------------------------------\n")
         writer.write(f"Total Votes: {votes_cast_total}")
         writer.write("-----------------------------------\n")
-        for canidate, votes in canidate_dict.items():
-            writer.write(f"{canidate}: {round(((votes/votes_cast_total)*100),ndigits=2)}% ({'{:,.0f}'.format(votes)})\n")
+        for candidate, votes in candidate_dict.items():
+            writer.write(f"{candidate}: {round(((votes/votes_cast_total)*100),ndigits=2)}% ({'{:,.0f}'.format(votes)})\n")
         writer.write("-----------------------------------\n")
         writer.write(f"Winner: {winner}")
         writer.write("-----------------------------------")
