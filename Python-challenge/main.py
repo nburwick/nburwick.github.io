@@ -25,8 +25,9 @@ def pybank(file_in, file_out):
         header = next(pybank_csv_reader)
         
          #read and store rows into memory
+        lines = []
         for row in pybank_csv_reader:
-            lines = pybank_csv_reader.read()
+            lines.append(row)
             
     #header row is Date, Profit/Loss
 
@@ -84,8 +85,9 @@ def pypoll(file_in, file_out):
         header = next(pypoll_csv_reader)
         
         #Read and store rows into memory
+        lines = []
         for row in pypoll_csv_reader:
-            lines = pypoll_csv_reader.read()
+            lines.append(row)
         
     #Header row is Ballot ID,County,Candidate
     
