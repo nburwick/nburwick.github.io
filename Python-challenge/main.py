@@ -1,7 +1,7 @@
 #this python script will process both the PyBank and PyPoll Projects and their accompaning csv files
 # import packages
 import os, csv, threading, time
-
+os.system('clear')
 start = time.time()
 
 #store file paths for script arguments to thread (run concurrently)
