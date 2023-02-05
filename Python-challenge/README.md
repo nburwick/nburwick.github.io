@@ -11,10 +11,10 @@ There are other techniques that would make this process easier to code, but we h
 
 Here are screenshots of my results from the console and the text files (which I renamed to my name to show the reproducible effect the script has).
 
-![Console Results](/Python-challenge/Images/Screenshot%202023-02-03%20at%2010.29.42%20PM.png)
+![Console Results](/Python-challenge/Images/Console%20Results.png)
 
-![PyBank_Results.txt](/Python-challenge/Images/Screenshot%202023-02-03%20at%2010.32.08%20PM.png)
+![PyBank_Results.txt](/Python-challenge/Images/Financial%20Results.png)
 
-![PyPoll_Results.txt](/Python-challenge/Images/Screenshot%202023-02-03%20at%2010.31.43%20PM.png)
+![PyPoll_Results.txt](/Python-challenge/Images/Election%20Results.png)
 
 I pushed myself to learn more about the multithreading package for this challenge and even found myself using it to request large data sets my employer has given me access to, to start practicing using the code in my analytics position. The main purpose for my work application is to connect to multiple datasources contained in the same report for our various divisions and merge them into a single dataset of 600,000 rows of data on average.
