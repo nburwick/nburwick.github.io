@@ -27,10 +27,8 @@ def pybank(file_in, file_out):
         header = next(pybank_csv_reader)
         
         #read and store rows into memory
-        lines = []
-        for row in pybank_csv_reader:
-            lines.append(row)
-            
+        lines = [row for row in pybank_csv_reader]
+
     #header row is Date, Profit/Loss
 
     #get pybank statistics from line memory
@@ -39,7 +37,7 @@ def pybank(file_in, file_out):
 
     #instanciate empty lists for moving average
     month_list, p_and_l = map(list, zip(*lines))
-    change_list = []
+    
     
     #convert p_and_l to floats
     p_and_l = list(map(float,p_and_l))
@@ -51,10 +49,13 @@ def pybank(file_in, file_out):
     total_net = sum(p_and_l)
     
     #get changes
+    change_list = []
     for index in range(1, len(p_and_l)):
         change = p_and_l[index] - p_and_l[index - 1]
         change_list.append(change)
-        
+    
+    #change_list2 = [(p_and_l[index] - p_and_l[index - 1]) for index in range(1,len(p_and_l))]
+   
     #create average change
     avg_change = (sum(change_list)/len(change_list))
     
@@ -90,9 +91,7 @@ def pypoll(file_in, file_out):
         header = next(pypoll_csv_reader)
        
         #Read and store rows into memory
-        lines = []
-        for row in pypoll_csv_reader:
-            lines.append(row)
+        lines = [row for row in pypoll_csv_reader]
         
     #Header row is Ballot ID,County,Candidate
     
