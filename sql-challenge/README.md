@@ -1,0 +1,3 @@
+# DATA ENGINEERING WITH SQL
+
+![EDR_TABLE](/Outputs/Employee_ERD.png)
