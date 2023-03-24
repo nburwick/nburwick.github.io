@@ -2,7 +2,7 @@
 
 Here is a new Entity Relationship Diagram for an Employee Database
 
-![EDR_TABLE](\Outputs\Employee_ERD.png)
+![EDR_TABLE](sql-challenge/Outputs/Employee_ERD.png)
 
 In the SQL Scripts folder there are two (2) scripts written with PostgreSQL to recreate the schema, load the data to the corresponding tables, and create views in answer to the following ad hoc views requested.
 
