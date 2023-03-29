@@ -42,21 +42,19 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return (
-    f"<h2>Welcome to the Hawaii Climate App</h2><br/>"
-    f"Available routes are:<br/>"
-    f"<ul><li>Precipitation - <code>/api/v1.0/precipitation</code></li></ul>"
+    f"<h2>Welcome to the Hawaii Climate App</h2>"
+    f"<pre>Available routes are:"
+    f"<pre><ul><li>Precipitation - /api/v1.0/precipitation</li></ul>"
     f"<pre>         Returns a json containing a year (12 months) data from last data point's date in the database. (2016-08-23 to 2017-08-23)<br>"
-    f"<ul><li>Stations - <code>/api/v1.0/stations</code></li></ul>"
+    f"<ul><li>Stations - /api/v1.0/stations</li></ul>"
     f"<pre>         Returns a json of 'station_id', 'station_name', 'lat', and 'lng' <br>"
-    f"<ul><li>Temperature Observations - <code>/api/v1.0/tobs</code></li></ul>"
+    f"<ul><li>Temperature Observations - /api/v1.0/tobs</li></ul>"
     f"<pre>         Returns a json temperature observations from the 'Most Active Station' in the database.<br>"
-    f"<ul><li>Calculated Temperatures (Single Date) - <code>/api/v1.0/start</code></li></ul>"
-    f"<ul><li>Calculated Temperatures (Dual Dates) - <code>/api/v1.0/start/end</code></li></ul>"
-    f""
-    f"The <b>Calculated Temperatures</b> route will return the minimum, maximum, and average temperatures of the date range given."
-    f"<br>If a single date is given, temperatures will be calculated for all dates equal to or greater than the date given."
-    f"<br>If two dates are given, temperatures will be calculated for all dates between the two given, inclusively."
-    f"<br>To use these routes, replace <code>start</code> and <code>end</code> with dates in YYYY-MM-DD format.")
+    f"<ul><li>Calculated Temperatures (Single Date) - /api/v1.0/start</li></ul>"
+    f"<pre>         Returns the minimum, maximum, and average temperatures from the start date given (YYYY-MM-DD) to the latest date included in the database."
+    f"<ul><li>Calculated Temperatures (Dual Dates) - /api/v1.0/start/end</li></ul>"
+    f"<pre>         Returns the minimum, maximum, and average temperatures from the start date given (YYYY-MM-DD) to the latest date given (YYYY-MM-DD)."
+    f"<br><br><b>Note: replace start and end with dates in YYYY-MM-DD format.")
 
 #################################################
 
@@ -239,4 +237,4 @@ def dual_date(start, end):
 
 # Initiate App
 if __name__ == "__main__":
-    app.run(port=8000, debug=True)
+    app.run(debug=True)
